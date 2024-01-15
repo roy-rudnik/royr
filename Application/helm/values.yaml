@@ -2,8 +2,8 @@ ReplicaNumber: 3
 
 containers:
   containerPort: 8080
-  image: 'quay.io/roy_rudnik/app_test'
-  tag: 'v2'
+  image: 'quay.io/(quay-userName)/(imageName)'
+  tag: 'chart_v1'
 
 service:
   servicePort: 8080
