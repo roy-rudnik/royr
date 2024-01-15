@@ -2,7 +2,7 @@ ReplicaNumber: 3
 
 containers:
   containerPort: 8080
-  image: 'quay.io/roy_rudnik/app_tst'
+  image: 'quay.io/roy_rudnik/app_test'
   tag: 'chart_v1'
 
 service:
