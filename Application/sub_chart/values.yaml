@@ -6,6 +6,7 @@ deploy1:
       tag: 'chart_v2'
   service:
       servicePort: 8080
+
 ---
 deploy2: 
   ReplicaNumber: 1
