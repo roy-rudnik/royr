@@ -44,15 +44,16 @@ spec:
             successThreshold: 1 # count to decalre seccessfull 
             failureThreshold: 3 # count to decalre failure
           livenessProbe:
-            httpGet:
-              path: /health/liveliness
-              port: {{ .Values.containers.containerPort }}
-              scheme: HTTP
-            initialDelaySeconds: 1
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3          
+            {{- tpl (toYaml .Values.Probes.livenessProbe) . | nindent 12 }}
+            # httpGet:
+            #   path: /health/liveliness
+            #   port: {{ .Values.containers.containerPort }}
+            #   scheme: HTTP
+            # initialDelaySeconds: 1
+            # timeoutSeconds: 1
+            # periodSeconds: 10
+            # successThreshold: 1
+            # failureThreshold: 3          
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
