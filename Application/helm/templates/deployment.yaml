@@ -12,6 +12,11 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
+      volumes:
+        - name: index-html
+          configMap:
+            name: '{{ .Chart.Name }}-html'
+            defaultMode: 420
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
@@ -25,13 +30,6 @@ spec:
           volumeMounts:
        - name: index-html
             mountPath: /tmp/html # this will mount the html.index file to it application location
-    
-      volumes:
-        - name: index-html
-          configMap:
-            name: '{{ .Chart.Name }}-html'
-            defaultMode: 420
-
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
