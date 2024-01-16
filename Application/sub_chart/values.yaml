@@ -7,7 +7,6 @@ deploy1:
   service:
       servicePort: 8080
 
----
 deploy2: 
   ReplicaNumber: 1
   containers:
